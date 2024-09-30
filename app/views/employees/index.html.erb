@@ -1,0 +1,31 @@
+<div class="container mx-auto">
+  <h1 class="text-3xl font-bold mb-4">Employees</h1>
+  <table class="min-w-full bg-white border border-gray-200">
+    <thead>
+      <tr>
+        <th class="px-6 py-2 text-left">First Name</th>
+        <th class="px-6 py-2 text-left">Last Name</th>
+        <th class="px-6 py-2 text-left">Email</th>
+        <th class="px-6 py-2 text-left">Date of Birth</th>
+        <th class="px-6 py-2 text-left">Address</th>
+        <th class="px-6 py-2 text-left">Country</th>
+        <th class="px-6 py-2 text-left">Bio</th>
+        <th class="px-6 py-2 text-left">Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @employees.each do |employee| %>
+        <tr class="border-b">
+          <td class="px-6 py-4"><%= employee.first_name %></td>
+          <td class="px-6 py-4"><%= employee['last_name'] %></td>
+          <td class="px-6 py-4"><%= employee['email'] %></td>
+          <td class="px-6 py-4"><%= employee['date_of_birth'] %></td>
+          <td class="px-6 py-4"><%= employee['address'] %></td>
+          <td class="px-6 py-4"><%= employee['country'] %></td>
+          <td class="px-6 py-4"><%= employee['bio'] %></td>
+          <td class="px-6 py-4"><%= employee['rating'] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
