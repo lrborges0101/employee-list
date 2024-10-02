@@ -1,31 +1,104 @@
-<div class="container mx-auto">
-  <h1 class="text-3xl font-bold mb-4">Employees</h1>
-  <table class="min-w-full bg-white border border-gray-200">
-    <thead>
-      <tr>
-        <th class="px-6 py-2 text-left">First Name</th>
-        <th class="px-6 py-2 text-left">Last Name</th>
-        <th class="px-6 py-2 text-left">Email</th>
-        <th class="px-6 py-2 text-left">Date of Birth</th>
-        <th class="px-6 py-2 text-left">Address</th>
-        <th class="px-6 py-2 text-left">Country</th>
-        <th class="px-6 py-2 text-left">Bio</th>
-        <th class="px-6 py-2 text-left">Rating</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @employees.each do |employee| %>
-        <tr class="border-b">
-          <td class="px-6 py-4"><%= employee.first_name %></td>
-          <td class="px-6 py-4"><%= employee['last_name'] %></td>
-          <td class="px-6 py-4"><%= employee['email'] %></td>
-          <td class="px-6 py-4"><%= employee['date_of_birth'] %></td>
-          <td class="px-6 py-4"><%= employee['address'] %></td>
-          <td class="px-6 py-4"><%= employee['country'] %></td>
-          <td class="px-6 py-4"><%= employee['bio'] %></td>
-          <td class="px-6 py-4"><%= employee['rating'] %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="antialiased font-sans bg-gray-50">
+  <div class="container mx-auto px-4 sm:px-8">
+    <div class="py-8">
+      <div>
+          <h2 class="text-2xl font-semibold leading-tight">Employees</h2>
+      </div>
+      <div class="my-2 flex sm:flex-row flex-col">
+        <div class="block relative">
+          <span class="h-full absolute inset-y-0 left-0 flex items-center pl-2">
+            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current text-gray-500">
+              <path
+                  d="M10 4a6 6 0 100 12 6 6 0 000-12zm-8 6a8 8 0 1114.32 4.906l5.387 5.387a1 1 0 01-1.414 1.414l-5.387-5.387A8 8 0 012 10z">
+              </path>
+            </svg>
+          </span>
+          <input placeholder="Search"
+              class="appearance-none rounded border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
+        </div>
+      </div>
+      <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+        <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+          <table class="min-w-full leading-normal">
+            <thead>
+              <tr>
+                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  First Name
+                </th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  Last Name
+                </th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  Email
+                </th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  Date of Birth
+                </th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  Address
+                </th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  Country
+                </th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  Bio
+                </th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  Rating
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @employees.each do |employee| %>
+                <tr>
+                  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <div class="flex items-center">
+                      <p class="text-gray-900 whitespace-no-wrap">
+                        <%= employee.first_name %>
+                      </p>
+                    </div>
+                  </td>
+                  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <p class="text-gray-900 whitespace-no-wrap">
+                      <%= employee.last_name %>
+                    </p>
+                  </td>
+                  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <p class="text-gray-900 whitespace-no-wrap">
+                      <%= employee.email %>
+                    </p>
+                  </td>
+                  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <p class="text-gray-900 whitespace-no-wrap">
+                      <%= employee.date_of_birth %>
+                    </p>
+                  </td>
+                  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <p class="text-gray-900 whitespace-no-wrap">
+                      <%= employee.address %>
+                    </p>
+                  </td>
+                  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <p class="text-gray-900 whitespace-no-wrap">
+                      <%= employee.country %>
+                    </p>
+                  </td>
+                  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <p class="text-gray-900 whitespace-no-wrap">
+                      <%= employee.bio %>
+                    </p>
+                  </td>
+                  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <p class="text-gray-900 whitespace-no-wrap">
+                      <%= employee.rating %>
+                    </p>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
