@@ -15,8 +15,6 @@ export default class extends Controller {
       this.newEvents += 1;
       this.showNotification();
     });
-
-    console.log(this.newEvents);
   }
 
   disconnect() {
