@@ -22,6 +22,5 @@ class ApiAuthenticationService
     })
 
     return JSON.parse(response.body)['access_token'] if response.success?
-    nil
   end
 end

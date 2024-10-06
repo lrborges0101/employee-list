@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_09_29_155747) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_03_180242) do
   create_table "employees", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -25,4 +25,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_29_155747) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.integer "employee_id", null: false
+    t.string "event_type"
+    t.boolean "read"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_events_on_employee_id"
+  end
+
+  add_foreign_key "events", "employees"
 end
