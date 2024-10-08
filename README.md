@@ -37,7 +37,7 @@ API_CLIENT_ID=your_client_id
 API_CLIENT_SECRET=your_client_secret
 API_USERNAME=your_username
 API_PASSWORD=your_password
-API_BASE_URI=https://beta.01cxhdz3a8jnmapv.com/api/v1/assignment
+API_BASE_URI=https://dev.truthsocial.com/api/v1/assignment
 ```
 4. Set Up the Database
 ```bash
