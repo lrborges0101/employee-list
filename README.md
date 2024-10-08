@@ -24,11 +24,11 @@ git clone
 ```bash
 cd employee-list
 ```
-3. Install Dependencies
+2. Install Dependencies
 ```bash
 bundle install
 ```
-5. Set Up Environment Variables
+3. Set Up Environment Variables
 At the .env file in the root directory, add your API credentials:
 
 # .env file
@@ -44,7 +44,11 @@ API_BASE_URI=https://dev.truthsocial.com/api/v1/assignment
 rails db:create
 rails db:migrate
 ```
-7. Start the Rails Server
+5. Precompiling Assets
+```bash
+rails assets:precompile
+```
+6. Start the Rails Server
 ```bash
 bin/dev
 ```
